@@ -11,12 +11,12 @@ import { IconBrandChrome } from '@tabler/icons-react';
 const icons = {
   IconBrandChrome
 };
-const samplePage = {
-  id: 'sample-page',
-  title: <FormattedMessage id="sample-page" />,
+const userManagement = {
+  id: 'user-management',
+  title: <FormattedMessage id="User Management" />,
   icon: icons.IconBrandChrome,
   type: 'group',
-  url: '/sample-page'
+  url: '/user-management'
 };
 
-export default samplePage;
+export default userManagement;
