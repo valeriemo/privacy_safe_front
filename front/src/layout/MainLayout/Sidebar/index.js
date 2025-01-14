@@ -5,32 +5,43 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
+// Hook pour vérifier les tailles de l'écran (responsive design).
 
 // third-party
 import PerfectScrollbar from 'react-perfect-scrollbar';
+// Barre de défilement personnalisée pour une meilleure expérience utilisateur.
 
 // project imports
 import MenuList from '../MenuList';
 import LogoSection from '../LogoSection';
 import MiniDrawerStyled from './MiniDrawerStyled';
 import Chip from 'components/ui-component/extended/Chip';
+// Badge ou étiquette pour afficher des informations (exemple : version de l'application).
 
 import useConfig from 'hooks/useConfig';
+// Hook personnalisé pour accéder à la configuration de l'application (comme `menuOrientation`).
+
 import { drawerWidth } from 'store/constant';
+// Largeur fixe du tiroir définie dans les constantes globales.
 
 import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
+// `handlerDrawerOpen` : Fonction pour ouvrir/fermer le tiroir.
+// `useGetMenuMaster` : Hook pour récupérer les données du menu principal.
+
 import { MenuOrientation } from 'config';
+// Enum ou objet contenant les orientations possibles du menu.
 
 // ==============================|| SIDEBAR DRAWER ||============================== //
 
 const Sidebar = () => {
+  // Détecte si l'écran est inférieur à la taille `md` (breakpoint Material-UI).
   const downMD = useMediaQuery((theme) => theme.breakpoints.down('md'));
-
+  // Récupère les données du menu via un hook (état global ou API).
   const { menuMaster } = useGetMenuMaster();
   const drawerOpen = menuMaster.isDashboardDrawerOpened;
-
+  // Récupère les configurations comme l'orientation du menu et le mode compact.
   const { menuOrientation, miniDrawer } = useConfig();
-
+  // Utilisation de `useMemo` pour mémoriser le composant Logo.
   const logo = useMemo(
     () => (
       <Box sx={{ display: 'flex', p: 2 }}>
@@ -39,7 +50,7 @@ const Sidebar = () => {
     ),
     []
   );
-
+  // Utilisation de `useMemo` pour générer le contenu du tiroir.
   const drawer = useMemo(() => {
     const isVerticalOpen = menuOrientation === MenuOrientation.VERTICAL && drawerOpen;
     const drawerContent = (
@@ -47,10 +58,11 @@ const Sidebar = () => {
         <Chip label={process.env.REACT_APP_VERSION} disabled chipcolor="secondary" size="small" sx={{ cursor: 'pointer' }} />
       </Stack>
     );
-
+    // Styles du tiroir (dépendent de `drawerOpen`).
     let drawerSX = { paddingLeft: '0px', paddingRight: '0px', marginTop: '20px' };
     if (drawerOpen) drawerSX = { paddingLeft: '16px', paddingRight: '16px', marginTop: '0px' };
 
+    // Contenu du tiroir (scrollable si non mobile).
     return (
       <>
         {downMD ? (
@@ -67,6 +79,7 @@ const Sidebar = () => {
       </>
     );
   }, [downMD, drawerOpen, menuOrientation]);
+  // Recalculé seulement si ces dépendances changent.
 
   return (
     <Box component="nav" sx={{ flexShrink: { md: 0 }, width: { xs: 'auto', md: drawerWidth } }} aria-label="mailbox folders">
@@ -103,3 +116,4 @@ const Sidebar = () => {
 };
 
 export default memo(Sidebar);
+// Optimisation pour empêcher le re-rendu si les props n'ont pas changé.
