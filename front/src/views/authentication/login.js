@@ -14,6 +14,8 @@ import Input from '@mui/material/Input';
 import Checkbox from '@mui/material/Checkbox';
 import Logo from 'components/ui-component/Logo'; // Votre logo personnalisé
 
+import AuthLogin from 'components/authentication/auth-forms/AuthLogin';
+
 export default function LoginPage() {
   // Style
   const LoginFormStyle = css({
@@ -50,7 +52,7 @@ export default function LoginPage() {
 
         {/* Login Form */}
         <Box
-          css={LoginFormStyle}
+          className={LoginFormStyle}
           component="form"
           onSubmit={(e) => {
             e.preventDefault();
@@ -63,7 +65,9 @@ export default function LoginPage() {
             console.log(data);
           }}
         >
-          <Typography level="h1" variant="h2" mb={2}>
+          <AuthLogin />
+
+          {/* <Typography level="h1" variant="h2" mb={2}>
             Sign In
           </Typography>
           <Typography level="body1" variant="h5" mb={4}>
@@ -77,7 +81,7 @@ export default function LoginPage() {
           <FormControl required sx={{ mt: 2 }}>
             <FormLabel>Password</FormLabel>
             <Input type="password" name="password" placeholder="Enter your password" />
-          </FormControl>
+          </FormControl> */}
           <Box
             sx={{
               display: 'flex',
