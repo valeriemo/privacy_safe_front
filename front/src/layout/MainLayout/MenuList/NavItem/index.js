@@ -87,6 +87,7 @@ const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) 
 
 NavItem.propTypes = {
   item: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired,
   level: PropTypes.number,
   isParents: PropTypes.bool,
   setSelectedID: PropTypes.func,
