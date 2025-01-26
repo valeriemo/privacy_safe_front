@@ -99,7 +99,7 @@ const ProfileSection = () => {
           borderRadius: '27px',
           transition: 'all .2s ease-in-out',
           borderColor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'primary.light',
-          bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'primary.light',
+          bgcolor: 'transparent',
           '&[aria-controls="menu-list-grow"], &:hover': {
             borderColor: 'primary.main',
             bgcolor: `${theme.palette.primary.main} !important`,

@@ -48,10 +48,10 @@ const Header = () => {
               ...theme.typography.mediumAvatar,
               overflow: 'hidden',
               transition: 'all .2s ease-in-out',
-              bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'secondary.light',
+              bgcolor: 'transparent',
               color: theme.palette.mode === ThemeMode.DARK ? 'secondary.main' : 'secondary.dark',
               '&:hover': {
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'secondary.main' : 'secondary.dark',
+                bgcolor: theme.palette.mode === 'secondary.dark',
                 color: theme.palette.mode === ThemeMode.DARK ? 'secondary.light' : 'secondary.light'
               }
             }}
@@ -68,10 +68,10 @@ const Header = () => {
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
 
-      {/* mega-menu */}
+      {/* mega-menu
       <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
         <MegaMenuSection />
-      </Box>
+      </Box> */}
 
       {/* live customization & localization */}
       <Box sx={{ display: { xs: 'none', sm: 'block' } }}>

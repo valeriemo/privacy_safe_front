@@ -56,7 +56,13 @@ const MenuList = () => {
         if (item.url && item.id !== lastItemId) {
           return (
             <List key={item.id}>
-              <NavItem item={item} level={1} isParents setSelectedID={() => setSelectedID('')} />
+              <NavItem
+                item={item}
+                level={1}
+                isParents
+                drawerOpen={drawerOpen} // Passe drawerOpen ici
+                setSelectedID={() => setSelectedID('')}
+              />
             </List>
           );
         }

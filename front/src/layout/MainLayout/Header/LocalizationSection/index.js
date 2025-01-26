@@ -65,14 +65,12 @@ const LocalizationSection = () => {
           sx={{
             ...theme.typography.commonAvatar,
             ...theme.typography.mediumAvatar,
-            border: '1px solid',
-            borderColor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'primary.light',
-            bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'primary.light',
+            bgcolor: 'transparent',
             color: 'primary.dark',
             transition: 'all .2s ease-in-out',
             '&[aria-controls="menu-list-grow"],&:hover': {
               borderColor: 'primary.main',
-              bgcolor: 'primary.main',
+              // bgcolor: 'primary.main',
               color: 'primary.light'
             }
           }}

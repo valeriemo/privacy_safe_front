@@ -1,8 +1,4 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-
-// next
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 // material-ui
@@ -17,7 +13,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 // ==============================|| SIDEBAR MENU LIST ITEMS ||============================== //
 
-const NavItem = ({ item, level, isParents = false, setSelectedID }) => {
+const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) => {
   const theme = useTheme();
   const pathname = usePathname();
 
@@ -25,17 +21,26 @@ const NavItem = ({ item, level, isParents = false, setSelectedID }) => {
 
   const Icon = item?.icon; // Récupère l'icône du menu.
   const itemIcon = Icon ? (
-    <Icon style={{ fontSize: '20px', color: isSelected ? theme.palette.primary.main : theme.palette.text.primary }} />
+    <Icon
+      style={{
+        fontSize: '20px',
+        color: isSelected ? theme.palette.primary.main : theme.palette.text.primary
+      }}
+    />
   ) : (
     <FiberManualRecordIcon
-      style={{ fontSize: isSelected ? '10px' : '8px', color: isSelected ? theme.palette.primary.main : theme.palette.text.primary }}
+      style={{
+        fontSize: isSelected ? '10px' : '8px',
+        color: isSelected ? theme.palette.primary.main : theme.palette.text.primary
+      }}
     />
   );
 
   return (
     <ListItemButton
-      component={Link}
+      component="a"
       href={item.url || '#'}
+      disabled={item.disabled}
       onClick={() => setSelectedID && setSelectedID(item.id)}
       sx={{
         borderRadius: `${theme.shape.borderRadius}px`,
@@ -51,24 +56,31 @@ const NavItem = ({ item, level, isParents = false, setSelectedID }) => {
       <ListItemIcon
         sx={{
           color: isSelected ? theme.palette.primary.main : theme.palette.text.secondary,
-          minWidth: 36
+          minWidth: 36,
+          display: 'flex',
+          justifyContent: 'center', // Centre horizontalement
+          alignItems: 'center' // Centre verticalement
         }}
       >
         {itemIcon}
       </ListItemIcon>
-      <ListItemText
-        primary={
-          <Typography
-            variant="body1"
-            sx={{
-              color: isSelected ? theme.palette.primary.main : theme.palette.text.primary,
-              fontWeight: isSelected ? 600 : 400
-            }}
-          >
-            {item.title}
-          </Typography>
-        }
-      />
+
+      {/* Affiche le texte uniquement si drawerOpen est vrai */}
+      {drawerOpen && (
+        <ListItemText
+          primary={
+            <Typography
+              variant="body1"
+              sx={{
+                color: isSelected ? theme.palette.primary.main : theme.palette.text.primary,
+                fontWeight: isSelected ? 600 : 400
+              }}
+            >
+              {item.title}
+            </Typography>
+          }
+        />
+      )}
     </ListItemButton>
   );
 };
@@ -77,7 +89,8 @@ NavItem.propTypes = {
   item: PropTypes.object.isRequired,
   level: PropTypes.number,
   isParents: PropTypes.bool,
-  setSelectedID: PropTypes.func
+  setSelectedID: PropTypes.func,
+  drawerOpen: PropTypes.bool // Ajout de la validation de prop pour drawerOpen
 };
 
 export default NavItem;
