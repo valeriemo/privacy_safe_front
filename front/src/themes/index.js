@@ -18,11 +18,6 @@ import customShadows from './shadows';
 // assets
 import colors from '../scss/_themes-vars.module.scss';
 import theme1 from '../scss/_theme1.module.scss';
-import theme2 from '../scss/_theme2.module.scss';
-import theme3 from '../scss/_theme3.module.scss';
-import theme4 from '../scss/_theme4.module.scss';
-import theme5 from '../scss/_theme5.module.scss';
-import theme6 from '../scss/_theme6.module.scss';
 
 export default function ThemeCustomization({ children }) {
   const config = useConfig();
@@ -37,21 +32,6 @@ export default function ThemeCustomization({ children }) {
   switch (config.presetColor) {
     case 'theme1':
       color = theme1;
-      break;
-    case 'theme2':
-      color = theme2;
-      break;
-    case 'theme3':
-      color = theme3;
-      break;
-    case 'theme4':
-      color = theme4;
-      break;
-    case 'theme5':
-      color = theme5;
-      break;
-    case 'theme6':
-      color = theme6;
       break;
     case 'default':
     default:

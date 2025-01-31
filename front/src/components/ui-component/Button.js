@@ -12,5 +12,9 @@ export default function Button({ children, color, endIcon, icon, size, startIcon
     }
   };
 
-  return <MuiButton sx={buttonStyle}>{children}</MuiButton>;
+  return (
+    <MuiButton startIcon={startIcon} endIcon={endIcon} color={color} variant={variant} size={size} sx={buttonStyle} {...props}>
+      {children}
+    </MuiButton>
+  );
 }

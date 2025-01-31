@@ -7,11 +7,6 @@ import { ThemeMode } from 'config';
 // assets
 import defaultColor from '../scss/_themes-vars.module.scss';
 import theme1 from '../scss/_theme1.module.scss';
-import theme2 from '../scss/_theme2.module.scss';
-import theme3 from '../scss/_theme3.module.scss';
-import theme4 from '../scss/_theme4.module.scss';
-import theme5 from '../scss/_theme5.module.scss';
-import theme6 from '../scss/_theme6.module.scss';
 
 // ==============================|| DEFAULT THEME - PALETTE ||============================== //
 
@@ -20,21 +15,6 @@ const Palette = (mode, presetColor) => {
   switch (presetColor) {
     case 'theme1':
       colors = theme1;
-      break;
-    case 'theme2':
-      colors = theme2;
-      break;
-    case 'theme3':
-      colors = theme3;
-      break;
-    case 'theme4':
-      colors = theme4;
-      break;
-    case 'theme5':
-      colors = theme5;
-      break;
-    case 'theme6':
-      colors = theme6;
       break;
     case 'default':
     default:
