@@ -18,7 +18,7 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // project imports
-import NavItem from '../NavItem';
+import NavItem from '../../../../components/ui-component/NavItem';
 import Transitions from 'components/ui-component/extended/Transitions';
 
 import useConfig from 'hooks/useConfig';

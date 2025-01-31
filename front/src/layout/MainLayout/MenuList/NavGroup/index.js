@@ -48,7 +48,7 @@ import { FormattedMessage } from 'react-intl';
 import NavCollapse from '../NavCollapse';
 // Composant personnalisé pour gérer un sous-menu repliable.
 
-import NavItem from '../NavItem';
+import NavItem from '../../../../components/ui-component/NavItem';
 // Composant personnalisé représentant un élément individuel du menu.
 
 import useConfig from 'hooks/useConfig';

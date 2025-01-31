@@ -1,14 +1,25 @@
-// menu import
-// En minuscule
-import dataSources from './data-sources';
+import dataSourceExploration from './data-sources-exploration';
 import dashboard from './dashboard';
 import userManagement from './user-management';
 import goldenData from './golden-data';
-
-// ==============================|| MENU ITEMS ||============================== //
+import dataFlowSettings from './data-flow-setting';
+import dataInspection from './data-inspection';
+import manualCorrection from './manual-correction';
+import originalData from './original-data';
+import reportRegeneration from './report-regeneration';
 
 const menuItems = {
-  items: [dashboard, userManagement, dataSources, goldenData]
+  items: [
+    dashboard,
+    userManagement,
+    dataSourceExploration,
+    dataFlowSettings,
+    dataInspection,
+    manualCorrection,
+    goldenData,
+    originalData,
+    reportRegeneration
+  ]
 };
 
 export default menuItems;

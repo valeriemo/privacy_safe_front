@@ -32,7 +32,7 @@ const config = {
   borderRadius: 8,
   outlinedFilled: true,
   mode: ThemeMode.LIGHT,
-  presetColor: 'default',
+  presetColor: 'theme1', // change theme colors here using theme1 for now
   i18n: 'en',
   themeDirection: ThemeDirection.LTR,
   container: false

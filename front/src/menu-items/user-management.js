@@ -1,20 +1,16 @@
-// This is example of menu item without group for horizontal layout. There will be no children.
 
-// third-party
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconBrandChrome } from '@tabler/icons-react';
-
-// ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
+import { IconUser } from '@tabler/icons-react';
 
 const icons = {
-  IconBrandChrome
+  IconUser
 };
 const userManagement = {
   id: 'user-management',
   title: <FormattedMessage id="User Management" />,
-  icon: icons.IconBrandChrome,
+  icon: icons.IconUser,
   type: 'group',
   url: '/user-management'
 };

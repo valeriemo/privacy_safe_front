@@ -27,6 +27,10 @@ const Palette = (mode, presetColor) => {
       common: {
         black: colors.darkPaper
       },
+      action: {
+        selected: mode === ThemeMode.DARK ? colors.darkPrimaryMain : colors.primaryMain, // just a test
+        // we can change all action colors in here. console.log(theme.palette) i.e.: hover, active, activeOpacity...
+      },
       primary: {
         light: mode === ThemeMode.DARK ? colors.darkPrimaryLight : colors.primaryLight,
         main: mode === ThemeMode.DARK ? colors.darkPrimaryMain : colors.primaryMain,
