@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Button from 'components/ui-component/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -154,7 +154,7 @@ const JWTLogin = ({ ...others }) => {
           )}
           <Box sx={{ mt: 2 }}>
             <AnimateButton>
-              <Button color="secondary" disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained">
+              <Button disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained">
                 Sign In
               </Button>
             </AnimateButton>
