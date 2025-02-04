@@ -1,7 +1,7 @@
 /**
  * Password validator for login pages
  */
-import value from '../scss/_themes-vars.module.scss';
+import value from '../scss/_theme1.module.scss';
 
 // has number
 const hasNumber = (number) => new RegExp(/[0-9]/).test(number);

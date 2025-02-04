@@ -13,7 +13,6 @@ const initialState = {
   onChangeMenuOrientation: () => {},
   onChangeMiniDrawer: () => {},
   onChangeMode: () => {},
-  onChangePresetColor: () => {},
   onChangeLocale: () => {},
   onChangeDirection: () => {},
   onChangeContainer: () => {},
@@ -58,13 +57,6 @@ function ConfigProvider({ children }) {
     setConfig({
       ...config,
       mode
-    });
-  };
-
-  const onChangePresetColor = (presetColor) => {
-    setConfig({
-      ...config,
-      presetColor
     });
   };
 
@@ -121,7 +113,6 @@ function ConfigProvider({ children }) {
         onChangeMenuOrientation,
         onChangeMiniDrawer,
         onChangeMode,
-        onChangePresetColor,
         onChangeLocale,
         onChangeDirection,
         onChangeContainer,

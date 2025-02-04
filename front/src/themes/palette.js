@@ -1,78 +1,67 @@
 // material-ui
 import { alpha, createTheme } from '@mui/material/styles';
 
-// project import
-import { ThemeMode } from 'config';
-
 // assets
-import defaultColor from '../scss/_themes-vars.module.scss';
 import theme1 from '../scss/_theme1.module.scss';
 
 // ==============================|| DEFAULT THEME - PALETTE ||============================== //
 
-const Palette = (mode, presetColor) => {
-  let colors;
-  switch (presetColor) {
-    case 'theme1':
-      colors = theme1;
-      break;
-    case 'default':
-    default:
-      colors = defaultColor;
-  }
+const Palette = () => {
+  let colors = theme1;
 
   return createTheme({
     palette: {
-      mode,
       common: {
         black: colors.darkPaper
       },
-      action: {
-        selected: mode === ThemeMode.DARK ? colors.darkPrimaryMain : colors.primaryMain, // just a test
-        // we can change all action colors in here. console.log(theme.palette) i.e.: hover, active, activeOpacity...
-      },
       primary: {
-        light: mode === ThemeMode.DARK ? colors.darkPrimaryLight : colors.primaryLight,
-        main: mode === ThemeMode.DARK ? colors.darkPrimaryMain : colors.primaryMain,
-        dark: mode === ThemeMode.DARK ? colors.darkPrimaryDark : colors.primaryDark,
-        200: mode === ThemeMode.DARK ? colors.darkPrimary200 : colors.primary200,
-        800: mode === ThemeMode.DARK ? colors.darkPrimary800 : colors.primary800
+        light: colors.primaryLight,
+        main: colors.primaryMain,
+        mainHover: colors.primaryMainHover,
+        mainActive: colors.primaryMainActive,
+        dark: colors.primaryDark,
+        200: colors.primary200,
+        800: colors.primary800
       },
       secondary: {
-        light: mode === ThemeMode.DARK ? colors.darkSecondaryLight : colors.secondaryLight,
-        main: mode === ThemeMode.DARK ? colors.darkSecondaryMain : colors.secondaryMain,
-        dark: mode === ThemeMode.DARK ? colors.darkSecondaryDark : colors.secondaryDark,
-        200: mode === ThemeMode.DARK ? colors.darkSecondary200 : colors.secondary200,
-        800: mode === ThemeMode.DARK ? colors.darkSecondary800 : colors.secondary800
+        light: colors.secondaryLight,
+        main: colors.secondaryMain,
+        mainHover: colors.secondaryMainHover,
+        mainActive: colors.secondaryMainActive,
+        dark: colors.secondaryDark,
+        200: colors.secondary200,
+        800: colors.secondary800
       },
       error: {
         light: colors.errorLight,
         main: colors.errorMain,
+        mainHover: colors.errorMainHover,
+        mainActive: colors.errorMainActive,
         dark: colors.errorDark
-      },
-      orange: {
-        light: colors.orangeLight,
-        main: colors.orangeMain,
-        dark: colors.orangeDark
       },
       warning: {
         light: colors.warningLight,
         main: colors.warningMain,
+        mainHover: colors.warningMainHover,
+        mainActive: colors.warningMainActive,
         dark: colors.warningDark
       },
       success: {
         light: colors.successLight,
         200: colors.success200,
         main: colors.successMain,
+        mainHover: colors.successMainHover,
+        mainActive: colors.successMainActive,
         dark: colors.successDark
       },
       grey: {
         50: colors.grey50,
         100: colors.grey100,
-        500: mode === ThemeMode.DARK ? colors.darkTextSecondary : colors.grey500,
-        600: mode === ThemeMode.DARK ? colors.darkTextTitle : colors.grey600,
-        700: mode === ThemeMode.DARK ? colors.darkTextPrimary : colors.grey700,
-        900: mode === ThemeMode.DARK ? colors.darkTextPrimary : colors.grey900
+        500: colors.grey500,
+        600: colors.grey600,
+        700: colors.grey700,
+        800: colors.grey800,
+        900: colors.grey900
       },
       dark: {
         light: colors.darkTextPrimary,
@@ -82,15 +71,15 @@ const Palette = (mode, presetColor) => {
         900: colors.darkPaper
       },
       text: {
-        primary: mode === ThemeMode.DARK ? colors.darkTextPrimary : colors.grey700,
-        secondary: mode === ThemeMode.DARK ? colors.darkTextSecondary : colors.grey500,
-        dark: mode === ThemeMode.DARK ? colors.darkTextPrimary : colors.grey900,
-        hint: colors.grey100
+        primary: colors.grey700,
+        secondary: colors.grey500,
+        disabled: colors.grey100,
+        constrast: colors.grey900
       },
-      divider: mode === ThemeMode.DARK ? alpha(colors.grey200, 0.2) : colors.grey200,
+      divider: colors.grey200,
       background: {
-        paper: mode === ThemeMode.DARK ? colors.darkLevel2 : colors.paper,
-        default: mode === ThemeMode.DARK ? colors.darkPaper : colors.paper
+        paper: colors.paper,
+        default: colors.paper
       }
     }
   });

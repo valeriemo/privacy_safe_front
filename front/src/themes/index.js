@@ -16,7 +16,6 @@ import componentStyleOverrides from './compStyleOverride';
 import customShadows from './shadows';
 
 // assets
-import colors from '../scss/_themes-vars.module.scss';
 import theme1 from '../scss/_theme1.module.scss';
 
 export default function ThemeCustomization({ children }) {
@@ -28,15 +27,7 @@ export default function ThemeCustomization({ children }) {
   const themeTypography = useMemo(() => Typography(theme, borderRadius, fontFamily), [theme, borderRadius, fontFamily]);
   const themeCustomShadows = useMemo(() => customShadows(mode, theme), [mode, theme]);
 
-  let color;
-  switch (config.presetColor) {
-    case 'theme1':
-      color = theme1;
-      break;
-    case 'default':
-    default:
-      color = colors;
-  }
+  let color = theme1;
 
   const themeOption = {
     colors: color,
@@ -52,34 +43,6 @@ export default function ThemeCustomization({ children }) {
     divider: '',
     customization: config
   };
-
-  switch (config.mode) {
-    case 'dark':
-      themeOption.paper = color.darkLevel2;
-      themeOption.backgroundDefault = color.darkPaper;
-      themeOption.background = color.darkBackground;
-      themeOption.darkTextPrimary = color.darkTextPrimary;
-      themeOption.darkTextSecondary = color.darkTextSecondary;
-      themeOption.textDark = color.darkTextPrimary;
-      themeOption.menuSelected = color.darkSecondaryMain;
-      themeOption.menuSelectedBack = alpha(color.darkSecondaryMain, 0.15);
-      themeOption.divider = color.darkTextPrimary;
-      themeOption.heading = color.darkTextTitle;
-      break;
-    case 'light':
-    default:
-      themeOption.paper = color.paper;
-      themeOption.backgroundDefault = color.paper;
-      themeOption.background = color.primaryLight;
-      themeOption.darkTextPrimary = color.grey700;
-      themeOption.darkTextSecondary = color.grey500;
-      themeOption.textDark = color.grey900;
-      themeOption.menuSelected = color.secondaryDark;
-      themeOption.menuSelectedBack = color.secondaryLight;
-      themeOption.divider = color.grey200;
-      themeOption.heading = color.grey900;
-      break;
-  }
 
   const themeOptions = useMemo(
     () => ({

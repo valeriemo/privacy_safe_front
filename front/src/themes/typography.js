@@ -5,42 +5,42 @@ const Typography = (theme, borderRadius, fontFamily) => ({
   fontFamily,
   h6: {
     fontWeight: 500,
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontSize: '0.75rem',
     letterSpacing: '0.15px',
     lineHeight: '160%'
   },
   h5: {
     fontSize: '0.875rem',
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontWeight: 400,
     letterSpacing: '0px',
     lineHeight: '133.4%'
   },
   h4: {
     fontSize: '1rem',
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontWeight: 500,
     letterSpacing: '0.25px',
     lineHeight: '123.5%'
   },
   h3: {
     fontSize: '1.25rem',
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontWeight: 400,
     letterSpacing: '0px',
     lineHeight: '116.7%'
   },
   h2: {
     fontSize: '1.5rem',
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontWeight: 500,
     letterSpacing: '-0.5px',
     lineHeight: '120%'
   },
   h1: {
     fontSize: '2.125rem',
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     fontWeight: 400,
     letterSpacing: '-1.5px',
     lineHeight: '116.7%'
@@ -101,7 +101,7 @@ const Typography = (theme, borderRadius, fontFamily) => ({
     }
   },
   mainContent: {
-    backgroundColor: theme.palette.mode === ThemeMode.DARK ? theme.palette.dark[800] : theme.palette.grey[100],
+    backgroundColor: theme.palette.grey[100],
     width: '100%',
     minHeight: 'calc(100vh - 88px)',
     flexGrow: 1,
@@ -113,7 +113,7 @@ const Typography = (theme, borderRadius, fontFamily) => ({
   menuCaption: {
     fontSize: '0.875rem',
     fontWeight: 500,
-    color: theme.palette.mode === ThemeMode.DARK ? theme.palette.grey[600] : theme.palette.grey[900],
+    color: theme.palette.grey[900],
     padding: '6px',
     textTransform: 'capitalize',
     marginTop: '10px'

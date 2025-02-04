@@ -1,5 +1,5 @@
 // third party
-import { Roboto } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
 // basename: only at build time to set, and Don't add '/' at end off BASENAME for breadcrumbs, also Don't put only '/' use blank('') instead,
 // like '/berry-material-react/react/default'
@@ -23,16 +23,16 @@ export const ThemeDirection = {
   RTL: 'rtl'
 };
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['300', '400', '500', '700'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '700', '900'] });
 
 const config = {
   menuOrientation: MenuOrientation.VERTICAL,
   miniDrawer: false,
-  fontFamily: roboto.style.fontFamily,
+  fontFamily: poppins.style.fontFamily,
   borderRadius: 8,
   outlinedFilled: true,
   mode: ThemeMode.LIGHT,
-  presetColor: 'theme1', // change theme colors here using theme1 for now
+  presetColor: 'theme1',
   i18n: 'en',
   themeDirection: ThemeDirection.LTR,
   container: false
