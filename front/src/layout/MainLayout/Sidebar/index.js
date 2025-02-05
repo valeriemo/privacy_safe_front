@@ -31,6 +31,8 @@ import { handlerDrawerOpen, useGetMenuMaster } from 'api/menu';
 import { MenuOrientation } from 'config';
 // Enum ou objet contenant les orientations possibles du menu.
 
+import NavLogoutButton from '../../../components/ui-component/NavLogOutButton';
+
 // ==============================|| SIDEBAR DRAWER ||============================== //
 
 const Sidebar = () => {
@@ -54,8 +56,8 @@ const Sidebar = () => {
   const drawer = useMemo(() => {
     const isVerticalOpen = menuOrientation === MenuOrientation.VERTICAL && drawerOpen;
     const drawerContent = (
-      <Stack direction="row" justifyContent="center" sx={{ mb: 2 }}>
-        <Chip label={process.env.REACT_APP_VERSION} disabled chipcolor="secondary" size="small" sx={{ cursor: 'pointer' }} />
+      <Stack direction="row" justifyContent="start" sx={{ mb: 2 }}>
+        <NavLogoutButton drawerOpen={drawerOpen}/>
       </Stack>
     );
     // Styles du tiroir (dépendent de `drawerOpen`).
@@ -82,7 +84,7 @@ const Sidebar = () => {
         ) : (
           <PerfectScrollbar style={drawerStyle}>
             <MenuList />
-            {isVerticalOpen && drawerContent}
+            {drawerContent}
           </PerfectScrollbar>
         )}
       </>
