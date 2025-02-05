@@ -66,17 +66,6 @@ const MenuList = () => {
             </List>
           );
         }
-        return (
-          <NavGroup
-            key={item.id}
-            setSelectedID={setSelectedID}
-            selectedID={selectedID}
-            item={item}
-            lastItem={lastItem}
-            remItems={remItems}
-            lastItemId={lastItemId}
-          />
-        );
       default:
         return (
           <Typography key={item.id} variant="h6" color="error" align="center">
@@ -86,7 +75,7 @@ const MenuList = () => {
     }
   });
 
-  return !isHorizontal ? <Box {...(drawerOpen && { sx: { mt: 1.5 } })}>{navItems}</Box> : <>{navItems}</>;
+  return !isHorizontal ? <Box {...(drawerOpen && { sx: { mt: 1.5 } })}>{navItems}<Divider></Divider></Box> : <>{navItems}</>;
 };
 
 export default memo(MenuList);

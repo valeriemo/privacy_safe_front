@@ -17,21 +17,21 @@ const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) 
 
   const Icon = item?.icon;
 
-  console.log(theme);
-
   const itemStyle = {
     borderRadius: `8px`,
-    backgroundColor: isSelected ? theme.palette.action.selected : 'transparent',
+    backgroundColor: isSelected ? theme.palette.primary.light : 'transparent',
     '&:hover': {
-      backgroundColor: isSelected ? theme.palette.action.selected : theme.palette.action.hover
+      backgroundColor: isSelected ? theme.palette.primary.light : theme.palette.action.hover
     },
+    display: 'flex',
+    justifyContent: 'center',
     mb: isDashboard ? 2 : 0.15,
-    pl: `${level * 16}px`,
+    px: `${level * 8}px`,
     py: 1
   };
 
   const iconStyle = {
-    color: isSelected ? theme.palette.primary.light : theme.palette.primary.main,
+    color: isSelected ? theme.palette.text.light : theme.palette.text.primary,
     minWidth: 36,
     display: 'flex',
     justifyContent: 'center',
@@ -39,7 +39,7 @@ const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) 
   };
 
   const textStyle = {
-    color: isSelected ? theme.palette.primary.light : theme.palette.text.primary,
+    color: isSelected ? theme.palette.text.light : theme.palette.text.primary,
     fontWeight: isSelected ? 500 : 400
   };
 

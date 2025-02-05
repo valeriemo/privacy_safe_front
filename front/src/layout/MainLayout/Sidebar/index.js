@@ -59,8 +59,17 @@ const Sidebar = () => {
       </Stack>
     );
     // Styles du tiroir (dépendent de `drawerOpen`).
-    let drawerSX = { paddingLeft: '0px', paddingRight: '0px', marginTop: '20px' };
-    if (drawerOpen) drawerSX = { paddingLeft: '16px', paddingRight: '16px', marginTop: '0px' };
+    const drawerStyle = {
+      paddingLeft: drawerOpen ? '16px' : '6px',
+      paddingRight: drawerOpen ? '16px' : '6px',
+      paddingTop: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      height: 'calc(100vh - 88px)'
+    }
+    let drawerSX = { paddingLeft: '6px', paddingRight: '6px', paddingTop: '20px' };
+    if (drawerOpen) drawerSX = { paddingLeft: '16px', paddingRight: '16px', paddingTop: '0px' };
 
     // Contenu du tiroir (scrollable si non mobile).
     return (
@@ -71,7 +80,7 @@ const Sidebar = () => {
             {isVerticalOpen && drawerContent}
           </Box>
         ) : (
-          <PerfectScrollbar style={{ height: 'calc(100vh - 88px)', ...drawerSX }}>
+          <PerfectScrollbar style={drawerStyle}>
             <MenuList />
             {isVerticalOpen && drawerContent}
           </PerfectScrollbar>

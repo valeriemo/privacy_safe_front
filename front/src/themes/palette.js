@@ -74,7 +74,8 @@ const Palette = () => {
         primary: colors.grey700,
         secondary: colors.grey500,
         disabled: colors.grey100,
-        constrast: colors.grey900
+        constrast: colors.grey900,
+        light: colors.grey50
       },
       divider: colors.grey200,
       background: {

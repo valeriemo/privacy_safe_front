@@ -9,7 +9,7 @@ const icons = {
 };
 const dataSourceExploration = {
   id: 'data-source-exploration',
-  title: <FormattedMessage id="Data source exploration" />,
+  title: <FormattedMessage id="data-source-exploration"/>,
   icon: icons.IconClick,
   type: 'group',
   url: '/data-source-exploration'

@@ -9,7 +9,7 @@ const icons = {
 };
 const dataInspection = {
   id: 'data-inspection',
-  title: <FormattedMessage id="Data inspection" />,
+  title: <FormattedMessage id="data-inspection"/>,
   icon: icons.IconClick,
   type: 'group',
   url: '/data-inspection'

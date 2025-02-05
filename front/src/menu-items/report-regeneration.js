@@ -9,7 +9,7 @@ const icons = {
 };
 const reportRegeneration = {
   id: 'report-regeneration',
-  title: <FormattedMessage id="Report regeneration" />,
+  title: <FormattedMessage id="report-regeneration"/>,
   icon: icons.IconClick,
   type: 'group',
   url: '/report-regeneration'

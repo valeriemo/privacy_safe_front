@@ -9,7 +9,7 @@ const icons = {
 };
 const userManagement = {
   id: 'user-management',
-  title: <FormattedMessage id="User Management" />,
+  title: <FormattedMessage id="user-management" />,
   icon: icons.IconUser,
   type: 'group',
   url: '/user-management'

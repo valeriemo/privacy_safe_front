@@ -13,7 +13,7 @@ const icons = {
 };
 const goldenData = {
   id: 'golden-data',
-  title: <FormattedMessage id="Golden Data" />,
+  title: <FormattedMessage id="golden-data"/>,
   icon: icons.IconBrandChrome,
   type: 'group',
   url: '/golden-data'

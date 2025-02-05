@@ -12,5 +12,15 @@
   "roadmap": "Roadmap",
   "social-profile": "Profil social",
   "account-settings": "Account settings",
-  "logout": "Logout"
+  "logout": "Logout",
+  "dashboard": "Dashboard",
+  "data-flow-setting": "Data flow setting",
+  "user-management": "User management",
+  "data-source-exploration": "Data source exploration",
+  "data-inspection": "Data inspection",
+  "golden-data": "Golden data",
+  "original-data": "Original data",
+  "report-regeneration": "Report regeneration",
+  "manual-correction": "Manual correction"
+
 }

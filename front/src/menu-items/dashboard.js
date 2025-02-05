@@ -9,7 +9,7 @@ const icons = {
 
 const dashboard = {
   id: 'dashboard',
-  title: <FormattedMessage id="Dashboard" />,
+  title: <FormattedMessage id="dashboard"/>,
   icon: icons.IconLayoutDashboard,
   type: 'group',
   url: '/dashboard'

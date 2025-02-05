@@ -9,7 +9,7 @@ const icons = {
 };
 const manualCorrection = {
   id: 'manual-correction',
-  title: <FormattedMessage id="Manual correction" />,
+  title: <FormattedMessage id="manual-correction"/>,
   icon: icons.IconClick,
   type: 'group',
   url: '/manual-correction'

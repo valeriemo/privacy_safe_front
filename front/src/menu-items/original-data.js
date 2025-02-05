@@ -9,7 +9,7 @@ const icons = {
 };
 const originalData = {
   id: 'original-data',
-  title: <FormattedMessage id="Original data" />,
+  title: <FormattedMessage id="original-data"/>,
   icon: icons.IconClick,
   type: 'group',
   url: '/original-data'
