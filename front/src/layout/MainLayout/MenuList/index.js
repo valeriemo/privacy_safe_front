@@ -75,7 +75,7 @@ const MenuList = () => {
     }
   });
 
-  return !isHorizontal ? <Box {...(drawerOpen && { sx: { mt: 1.5 } })}>{navItems}<Divider></Divider></Box> : <>{navItems}</>;
+  return !isHorizontal ? <Box>{navItems}<Divider></Divider></Box> : <>{navItems}</>;
 };
 
 export default memo(MenuList);

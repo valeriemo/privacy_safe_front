@@ -62,8 +62,8 @@ const Sidebar = () => {
     );
     // Styles du tiroir (dépendent de `drawerOpen`).
     const drawerStyle = {
-      paddingLeft: drawerOpen ? '16px' : '6px',
-      paddingRight: drawerOpen ? '16px' : '6px',
+      paddingLeft: drawerOpen ? '16px' : '12px',
+      paddingRight: drawerOpen ? '16px' : '12px',
       paddingTop: '20px',
       display: 'flex',
       flexDirection: 'column',

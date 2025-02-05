@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
+import { AspectRatio } from '../../../node_modules/@mui/icons-material/index';
 
 const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) => {
   const theme = useTheme();
@@ -26,7 +27,7 @@ const NavItem = ({ item, level, isParents = false, setSelectedID, drawerOpen }) 
     display: 'flex',
     justifyContent: 'center',
     mb: isDashboard ? 2 : 0.15,
-    px: `${level * 8}px`,
+    px: drawerOpen ? '8px' : '4px',
     py: 1
   };
 
