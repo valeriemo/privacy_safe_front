@@ -24,6 +24,7 @@ import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons-reac
 const HeaderAvatar = forwardRef(({ children, ...others }, ref) => {
   const theme = useTheme();
 
+
   return (
     <Avatar
       ref={ref}
@@ -65,28 +66,6 @@ const MobileSearch = ({ value, setValue, popupState }) => {
           <IconSearch stroke={1.5} size="16px" color={theme.palette.grey[500]} />
         </InputAdornment>
       }
-      endAdornment={
-        <InputAdornment position="end">
-          <HeaderAvatar variant="rounded">
-            <IconAdjustmentsHorizontal stroke={1.5} size="20px" />
-          </HeaderAvatar>
-          <Box sx={{ ml: 2 }}>
-            <Avatar
-              variant="rounded"
-              sx={{
-                ...theme.typography.commonAvatar,
-                ...theme.typography.mediumAvatar,
-                bgcolor: theme.palette.mode === ThemeMode.DARK ? 'dark.main' : 'orange.light',
-                color: 'orange.dark',
-                '&:hover': { bgcolor: 'orange.dark', color: 'orange.light' }
-              }}
-              {...bindToggle(popupState)}
-            >
-              <IconX stroke={1.5} size="20px" />
-            </Avatar>
-          </Box>
-        </InputAdornment>
-      }
       aria-describedby="search-helper-text"
       inputProps={{ 'aria-label': 'weight', sx: { bgcolor: 'transparent', pl: 0.5 } }}
       sx={{ width: '100%', ml: 0.5, px: 2, bgcolor: 'background.paper' }}
@@ -105,7 +84,12 @@ MobileSearch.propTypes = {
 const SearchSection = () => {
   const theme = useTheme();
   const [value, setValue] = useState('');
-
+  const searchStyle = {
+    bgcolor: theme.palette.grey[200],
+    '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'transparent'
+          },
+  }
   return (
     <>
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
@@ -161,16 +145,9 @@ const SearchSection = () => {
               <IconSearch stroke={1.5} size="16px" color={theme.palette.grey[500]} />
             </InputAdornment>
           }
-          endAdornment={
-            <InputAdornment position="end">
-              <HeaderAvatar variant="rounded">
-                <IconAdjustmentsHorizontal stroke={1.5} size="20px" />
-              </HeaderAvatar>
-            </InputAdornment>
-          }
           aria-describedby="search-helper-text"
           inputProps={{ 'aria-label': 'weight', sx: { bgcolor: 'transparent', pl: 0.5 } }}
-          sx={{ width: { md: 250, lg: 434 }, ml: 2, px: 2 }}
+          sx={{ width: { md: 300, lg: 434 }, ml: 2, px: 2, ...searchStyle }}
         />
       </Box>
     </>

@@ -8,6 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import useConfig from 'hooks/useConfig';
 import LogoSection from '../LogoSection';
 import SearchSection from './SearchSection';
+import SettingSection from './SettingSection';
+import InfoSection from './InfoSection';
 import MobileSection from './MobileSection';
 import ProfileSection from './ProfileSection';
 import FullScreenSection from './FullScreenSection';
@@ -64,7 +66,7 @@ const Header = () => {
       </Box>
 
       {/* header search */}
-      <SearchSection />
+      <SearchSection sx={{ marginLeft: 20}}/>
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
 
@@ -74,10 +76,11 @@ const Header = () => {
       </Box> */}
 
       {/* live customization & localization */}
-      <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+      {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
         <LocalizationSection />
-      </Box>
-
+      </Box> */}
+      <InfoSection />
+      <SettingSection />
       {/* notification */}
       <NotificationSection />
 

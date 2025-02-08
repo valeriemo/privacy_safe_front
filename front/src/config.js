@@ -6,6 +6,8 @@ import { Poppins } from 'next/font/google';
 export const BASE_PATH = '';
 
 export const DASHBOARD_PATH = '/dashboard';
+export const INFO_PATH = '/info';
+export const SETTING_PATH = '/settings';
 export const HORIZONTAL_MAX_ITEM = 7;
 
 export const MenuOrientation = {
